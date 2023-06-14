@@ -1,0 +1,29 @@
+.menu {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.link {
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 15px;
+  color: #6a6871;
+  text-decoration: none;
+  background-color: thistle;
+  border-radius: 8px;
+  border: 1px solid #5d537b;
+  box-shadow: 6px 6px 24px -5px #42445a;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.link:hover {
+  color: coral;
+}
+
+.link:global(.active) {
+  color: #ff009d;
+}
