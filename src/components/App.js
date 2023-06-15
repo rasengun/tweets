@@ -1,16 +1,22 @@
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import { Layout } from "./Layout/Layout";
 
-import Tweets from "../pages/Tweets/Tweets";
+const Home = lazy(() => import("../pages/Home/Home"));
+const Tweets = lazy(() => import("../pages/Tweets/Tweets"));
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route path="/tweets" element={<Tweets />} />
-      </Route>
-    </Routes>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/tweets" element={<Tweets />} />
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Home />} />
+        </Route>
+      </Routes>
+    </Suspense>
   );
 }
 

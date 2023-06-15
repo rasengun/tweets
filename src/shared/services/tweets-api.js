@@ -4,12 +4,18 @@ const tweetsInstance = axios.create({
   baseURL: "https://6403694af61d96ac487f1c15.mockapi.io/api/tweets",
 });
 
-export const getAllUsers = async () => {
-  const { data } = await tweetsInstance.get("/");
-  return data;
-};
+export const fetchTweets = async (setTweets) => {
+  try {
+    const response = await tweetsInstance.get("/");
 
-export const deleteContact = async (id) => {
-  const { data } = await tweetsInstance.delete(`/${id}`);
-  return data;
+    const savedTweets = JSON.parse(localStorage.getItem("tweets"));
+
+    if (savedTweets) {
+      setTweets(savedTweets);
+    } else {
+      setTweets(response.data);
+    }
+  } catch (error) {
+    console.log(error);
+  }
 };
