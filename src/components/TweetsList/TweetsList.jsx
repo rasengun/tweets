@@ -82,7 +82,9 @@ export const TweetsList = () => {
         ))}
       </ul>
       {showLoadMoreButton && (
-        <button onClick={handleLoadMore}>LOAD MORE</button>
+        <button onClick={handleLoadMore} className={s.btnLoad}>
+          LOAD MORE
+        </button>
       )}
     </>
   );
