@@ -13,7 +13,9 @@ export const TweetCard = ({ tweet, handleFollow }) => {
           <div className={s.line}></div>
           <img src={tweet.avatar} alt="user" className={s.user} />
           <p className={s.tweets}>{tweet.tweets} TWEETS</p>
-          <p className={s.followers}>{tweet.followers} FOLLOWERS</p>
+          <p className={s.followers}>
+            {tweet.followers.toLocaleString("en-US")} FOLLOWERS
+          </p>
           <button
             type="button"
             onClick={handleFollow}
