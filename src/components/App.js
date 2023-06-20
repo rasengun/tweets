@@ -9,7 +9,7 @@ const Tweets = lazy(() => import("../pages/Tweets/Tweets"));
 
 function App() {
   return (
-    <HashRouter basename="/tweets">
+    <HashRouter>
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Layout />}>
