@@ -20,4 +20,4 @@ The project implements routing with two main routes:
 
 Discover the joy of tracking tweets and managing followers in this intuitive project. Let's get started!
 
-<img width="1021" alt="screen" src="https://imgur.com/a/yckkjNn">
+<img width="1021" alt="screen" src="https://i.imgur.com/beTkw9q.png">
